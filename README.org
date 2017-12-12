@@ -2,5 +2,18 @@
 ** Set up system configs
 Symlink configuration.nix to this directory to use on that system you're on:
 #+BEGIN_SRC sh
-ln -s hosts/<hostname>/configuration.nix .
+$ ln -s hosts/<hostname>/configuration.nix .
+#+END_SRC
+
+** Set up home-manager
+#+BEGIN_SRC sh
+# Symlink home configs
+$ ln -s /etc/nixos/home-concate-nixpkgs/ /home/concate/.config/nixpkgs
+
+# Install home-manager
+$ mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
+$ nix-shell https://github.com/rycee/home-manager/archive/master.tar.gz -A install --run 'home-manager switch'
+
+# Build home config
+$ home-manager switch
 #+END_SRC
