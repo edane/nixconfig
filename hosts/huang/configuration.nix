@@ -11,6 +11,7 @@
       ../../profiles/common.nix
       ../../profiles/common-graphical.nix
       ../../profiles/desktop-gnome.nix
+      ../../profiles/gaming.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
