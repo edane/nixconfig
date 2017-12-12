@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../profiles/common.nix
+      ../../profiles/common-graphical.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -20,20 +21,13 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    firefox-bin
-    stupidterm
-    mpv
     emacs
 
     evince
-    pavucontrol
     gnome3.gnome-tweak-tool
     gnomeExtensions.dash-to-dock
     gnomeExtensions.topicons-plus
   ];
-
-  # Used for nvidia drivers, spotify and steam and such
-  nixpkgs.config.allowUnfree = true;
 
   # Enable nvidia drivers
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -45,20 +39,6 @@
     sources=[('xkb', 'se+dvorak')]
     xkb-options=['eurosign:e', 'ctrl:nocaps', 'numpad:mac', 'kpdl:dot']
   '';
-
-  networking.networkmanager.enable = true;
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "se";
-  services.xserver.xkbOptions = "eurosign:e,ctrl:nocaps,numpad:mac,kpdl:dot";
-  services.xserver.xkbVariant = "dvorak";
-
-  # Enable touchpad support.
-  # services.xserver.libinput.enable = true;
-
-  # Don't enable xterm as session
-  services.xserver.desktopManager.xterm.enable = false;
 
   # Enable Gnome3.
   services.xserver.desktopManager.gnome3.enable = true;
