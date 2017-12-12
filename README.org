@@ -1,0 +1,6 @@
+* My NixOS configs
+** Set up system configs
+Symlink configuration.nix to this directory to use on that system you're on:
+#+BEGIN_SRC sh
+ln -s hosts/<hostname>/configuration.nix .
+#+END_SRC
