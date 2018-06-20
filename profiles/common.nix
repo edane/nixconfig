@@ -7,7 +7,7 @@ with lib;
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "17.09";
+  system.nixos.stateVersion = "17.09";
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -55,6 +55,7 @@ with lib;
     tmux
     youtube-dl
     whois
+    python36
   ];
 
   # Enable firewall.
