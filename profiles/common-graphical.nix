@@ -29,6 +29,10 @@
     stupidterm
     pavucontrol
 
+    vscode-with-extensions
+    dotnet-sdk
+    mono50
+
     # Fonts
     powerline-fonts
     emacs-all-the-icons-fonts
